@@ -62,14 +62,6 @@ Debrief is built with Django, React, and Postgres.
    SECRET_KEY=your_secret_key
    DATABASE_URL=postgres://user:password@localhost:5432/debrief
    ```
-5. Run migrations:
-   ```
-   python manage.py migrate
-   ```
-6. Create a superuser:
-   ```
-   python manage.py createsuperuser
-   ```
 
 ### Frontend Setup
 1. Navigate to the frontend directory:
@@ -106,14 +98,27 @@ The application should now be running. Access the backend at `http://localhost:8
 ## Populating with Dummy Data
 
 To populate the database with dummy events for testing:
-
-1. Create a management command in the Django app:
    ```
-   python manage.py create_dummy_data
-   ```
-2. Run the command:
+   Run the command:
    ```
    python manage.py create_dummy_data
    ```
 
 This will add a few sample events, news outlets, and articles to get you started.
+
+## To Do
+- Add scrapers for news outlets
+- Add merging of articles
+   - Add a way to check if articles are about the same thing
+   - Add a way to merge them if they are
+- Add a search function for events
+- Add a recommendation system for events
+- Add a bias and error detection system
+   - Add a way to rate the bias and error of individual reporters
+   - Add a way to rate the bias and error of individual news outlets
+   - Add a way to see the bias and error of individual news outlets
+- Add backend admin dashboard and control panel
+- Update styles: make it look nicer
+- Add a way to filter events by date, topic, etc.
+- Add a way to filter news outlets by country, political leaning, etc.
+- Add a way to filter reporters by country, political leaning, etc.
